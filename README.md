@@ -1,48 +1,45 @@
-# jQuery Documentation
- Guide to Using jQuery with Webpack Setup✨
 
+# Using the jQuery Library on a Web Page
 
-# Использование библиотеки jQuery на веб-странице
+jQuery is a popular JavaScript library that simplifies DOM manipulation, event handling, animations, and more. This guide explains how to include jQuery in your project and utilize its features.
 
-jQuery — это популярная библиотека JavaScript, которая упрощает работу с DOM, обработку событий, анимации и многое другое. В данном руководстве описано, как подключить jQuery к вашему проекту и использовать её возможности.
+## Adding jQuery
 
-## Подключение jQuery
-
-### 1. Использование CDN
-Вы можете подключить библиотеку jQuery с помощью CDN (Content Delivery Network). Это быстрый и простой способ.
-Добавьте следующий тег `<script>` в `<head>` или перед закрывающим тегом `<body>`:
+### 1. Using a CDN
+You can include the jQuery library via a CDN (Content Delivery Network). This is a fast and easy method.
+Add the following `<script>` tag to your `<head>` or before the closing `<body>` tag:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 ```
 
-### 2. Локальное подключение
-Скачайте файл библиотеки jQuery с официального сайта: [https://jquery.com/download/](https://jquery.com/download/).
+### 2. Local Installation
+Download the jQuery library from the official website: [https://jquery.com/download/](https://jquery.com/download/).
 
-Добавьте файл в ваш проект (например, в папку `js`) и подключите его:
+Add the file to your project (e.g., in a `js` folder) and include it as follows:
 
 ```html
 <script src="js/jquery-3.6.4.min.js"></script>
 ```
 
-## Настройка проекта с использованием Webpack
-Если вы работаете с Webpack, вы можете установить jQuery как модуль:
+## Setting Up a Project with Webpack
+If you're using Webpack, you can install jQuery as a module:
 
-### Установка jQuery через npm
-Выполните следующую команду в терминале:
+### Installing jQuery via npm
+Run the following command in the terminal:
 
 ```bash
 npm install jquery
 ```
 
-### Импорт jQuery в вашем JavaScript-файле
-Используйте следующий импорт в `script.js` или любом другом файле:
+### Importing jQuery in Your JavaScript File
+Use the following import statement in `script.js` or any other file:
 
 ```javascript
 import $ from 'jquery';
 ```
 
-## Пример HTML-структуры
+## Example HTML Structure
 
 ```html
 <!DOCTYPE html>
@@ -55,11 +52,11 @@ import $ from 'jquery';
 </head>
 <body>
     <div class="list">
-        <button id="btn" class="list-item">Первый</button>
-        <button class="list-item">Второй</button>
-        <button class="list-item">Третий!</button>
-        <button class="list-item">Четвёртый</button>
-        <button class="list-item">Пятый</button>
+        <button id="btn" class="list-item">First</button>
+        <button class="list-item">Second</button>
+        <button class="list-item">Third!</button>
+        <button class="list-item">Fourth</button>
+        <button class="list-item">Fifth</button>
     </div>
 
     <div class="wrapper">
@@ -72,25 +69,25 @@ import $ from 'jquery';
 </html>
 ```
 
-## Пример использования jQuery
+## Example Usage of jQuery
 
-Файл `script.js`:
+File `script.js`:
 
 ```javascript
 import $ from 'jquery';
 
 $(document).ready(function() {
-    // Добавление класса active при наведении на первый элемент списка
+    // Add the 'active' class when hovering over the first list item
     $('.list-item:first').hover(function() {
         $(this).toggleClass('active');
     });
 
-    // Переключение видимости чётных изображений при нажатии на третий элемент списка
+    // Toggle visibility of even images when clicking the third list item
     $('.list-item:eq(2)').on('click', function() {
         $('.image:even').fadeToggle('slow');
     });
 
-    // Анимация нечётных изображений при нажатии на пятый элемент списка
+    // Animate odd images when clicking the fifth list item
     $('.list-item:eq(4)').on('click', function () {
         $('.image:odd').animate({
             opacity: 'toggle',
@@ -100,19 +97,19 @@ $(document).ready(function() {
 });
 ```
 
-### Описание функционала:
-1. **Hover-эффект на первый элемент списка:**
-   При наведении мыши на кнопку с текстом "Первый" она получает или теряет класс `active`.
+### Functionality Description:
+1. **Hover Effect on the First List Item:**
+   When hovering over the button labeled "First," it toggles the `active` class.
 
-2. **Переключение видимости чётных изображений:**
-   При клике на кнопку "Третий!" чётные изображения переключают свою видимость с эффектом `fadeToggle`.
+2. **Toggle Visibility of Even Images:**
+   Clicking on the "Third!" button toggles the visibility of even images with a `fadeToggle` effect.
 
-3. **Анимация нечётных изображений:**
-   При клике на кнопку "Пятый" нечётные изображения анимируются, изменяя прозрачность и высоту.
+3. **Animate Odd Images:**
+   Clicking on the "Fifth" button animates odd images by toggling their opacity and height.
 
-## Настройка Webpack
+## Webpack Configuration
 
-Файл `webpack.config.js`:
+File `webpack.config.js`:
 
 ```javascript
 'use strict';
@@ -150,23 +147,23 @@ module.exports = {
 };
 ```
 
-### Команды для запуска проекта:
+### Commands to Run the Project:
 
-1. **Установка зависимостей:**
+1. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-2. **Сборка проекта:**
+2. **Build the Project:**
    ```bash
    npx webpack
    ```
 
-3. **Запуск в режиме разработки:**
+3. **Run in Development Mode:**
    ```bash
    npm run start
    ```
 
-## Ресурсы и документация
-- Официальный сайт jQuery: [https://jquery.com/](https://jquery.com/)
-- Документация Webpack: [https://webpack.js.org/](https://webpack.js.org/)
+## Resources and Documentation
+- Official jQuery Website: [https://jquery.com/](https://jquery.com/)
+- Webpack Documentation: [https://webpack.js.org/](https://webpack.js.org/)
